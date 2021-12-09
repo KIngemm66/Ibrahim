@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <style>
+
+
+
+        *{
+            margin: 0;
+        }
+        
+        
+        
+        
+        
+        a{
+           text-decoration: none; 
+           color:white;
+           font-family: Arial;
+         
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        .content-table{
+        
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        width: 600px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0 ,15);
+        }
+        
+        
+        .content-table thead tr{
+        
+        background-color: #009879;
+        color: white;
+        text-align: left;
+        font-weight: bold;
+        
+        }
+        
+        
+        .content-table tbody tr{
+          border-bottom:  1px solid #dddddd;
+        }
+        
+        .content-table tbody tr.active-row{
+        
+        font-weight: bold;
+        color: #009879;
+        
+        
+        }
+        
+        
+        .content-table tbody t :nth-of-type(even){
+        
+        background-color: #f3f3f3;
+        
+        }
+        
+        
+        .content-table th, .content-table td{
+        
+        padding: 12px 15px;
+        
+        }
+        
+        
+        .content-table tbody tr:last-of-type {
+        
+        border-bottom: 2px solid #00bbff;
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+              
+        
+        
+              nav{
+        
+            
+                background-color: #222222;
+                height: 60px;
+                width: 100%;
+        
+              }
+        
+            </style>
+
+</head>
+<body style="background-color: rgb(215, 234, 255); font-family: Arial, Helvetica, sans-serif;">
+
+<a href="/add" style="color: black; position: absolute;  margin-left: 40px;margin-top: 80px; font-size: 20px;">Add Product</a>
+
+<br>
+<br>
+
+<a href="/gotoadmin" style="color: #222222; float: right; margin-right: 30px; margin-top: 60px;  font-size: 20px; margin-top: 20px;">ADMIN</a>
+
+
+
+<table class="content-table" style="background-color: #ffffff;margin-top: 80px; margin-left: 30px;">
+    <thead>
+    <tr>
+        <th>Plant Name</th>
+        <th>Species</th>
+        <th>Manufacturer</th>
+        <th>Manufacturer Location</th>
+        <th>Price</th>
+        <th>Amount Available</th>
+    </tr>
+</thead>
+    {% for i in plants %}
+    <tr>
+    <td>{{i.plantname}}</td>
+    <td>{{i.species}}</td>
+    <td>{{i.manufacturer}}</td>
+    <td>{{i.manufacturerlocation}}</td>
+    <td>{{i.price}}</td>
+    <td>{{i.amountremaining}}</td>
+
+    </tr>
+{% endfor %}
+</table>
+
+</body>
+
+</html>
